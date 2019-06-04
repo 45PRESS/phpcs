@@ -1,0 +1,29 @@
+{
+  "name": "45press/phpcs",
+  "description": "PHPCS base ruleset for 45PRESS",
+	"type": "phpcodesniffer-standard",
+	"version": "dev-master",
+	"license": "UNLICENSE",
+	"require": {
+			"dealerdirect/phpcodesniffer-composer-installer": "*",
+			"phpcompatibility/phpcompatibility-wp": "^2",
+			"squizlabs/php_codesniffer" : "^3.4.0",
+			"wp-coding-standards/wpcs": "*"
+	},
+	"prefer-stable" : true,
+	"authors": [
+			{
+					"name": "Reilly Lowery",
+					"email": "r.lowery@45press.com"
+			}
+	],
+	"scripts": {
+		"config-cs": [
+			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+			"\"vendor/bin/phpcs\" --config-set default_standard 45PRESS-Standard"
+		],
+		"post-install-cmd": "@config-cs",
+		"post-update-cmd": "@config-cs",
+		"lint": "\"vendor/bin/phpcs\" . "
+	}
+}
