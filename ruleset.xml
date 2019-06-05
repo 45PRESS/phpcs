@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<ruleset name="45PRESS-Standard">
+	<description>45PRESS PHPCS</description>
+	<rule ref="45PRESS-Standard/ruleset.xml" />
+</ruleset>
